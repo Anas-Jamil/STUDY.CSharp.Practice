@@ -22,7 +22,14 @@ namespace Practicing
             {
                 ifPrint = true;
             }
-
+            if (fName.Length > lName.Length)
+            {
+                Console.WriteLine("First name is longer than last");
+            }
+            else
+            {
+                Console.WriteLine("Last name is longer than first");
+            }
 
             Console.WriteLine($"Full Name is: {fName} {lName}");
             Console.WriteLine("Result is: " + plus + " " + myNum);
