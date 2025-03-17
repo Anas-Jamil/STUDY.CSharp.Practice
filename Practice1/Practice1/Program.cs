@@ -18,15 +18,8 @@ namespace Practicing
             bool ifPrint = random >= 25;
             int findMax = Math.Max(fName.Length, lName.Length);
 
-            Console.WriteLine(fName.Length > lName.Length
-                ? "First name is longer than last"
-                : "Last name is longer than first");
-
-            Console.WriteLine($"Full Name is: {fName} {lName}");
-            Console.WriteLine($"Result is: {myNum}");
-            Console.WriteLine($"Status is: {ifPrint}");
-            Console.WriteLine($"Max name count is: {findMax}");
-
+            nameLengths(fName, lName);
+            displayResults(fName, lName, myNum, ifPrint, findMax);
 
 
             static string getName(string message)
@@ -47,6 +40,22 @@ namespace Practicing
                 return number;
 
             }
+
+            static void nameLengths(string fName, string lName)
+            {
+                Console.WriteLine(fName.Length > lName.Length
+                    ? "First name is longer than last"
+                    : "Last name is longer than first");
+
+            }
+
+            static void displayResults(string fName, string lName, float myNum, bool ifPrint, int findMax)
+            {
+                Console.WriteLine($"Full Name is: {fName} {lName}");
+                Console.WriteLine($"Result is: {myNum}");
+                Console.WriteLine($"Status is: {ifPrint}");
+                Console.WriteLine($"Max name count is: {findMax}");
+            } 
 
         }
 
