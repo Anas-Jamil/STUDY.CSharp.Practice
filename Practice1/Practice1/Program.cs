@@ -11,9 +11,9 @@ namespace Practicing
 
             Console.WriteLine("Please enter first name: ");
             string fName = Console.ReadLine();
+
             Console.WriteLine("Please enter last name: ");
             string lName = Console.ReadLine();
-
 
             Console.WriteLine("Please enter an integer: ");
             if (!int.TryParse(Console.ReadLine(), out random))
@@ -23,15 +23,16 @@ namespace Practicing
             }
 
             bool ifPrint = random >= 25;
+            int findMax = Math.Max(fName.Length, lName.Length);
 
             Console.WriteLine(fName.Length > lName.Length
                 ? "First name is longer than last"
                 : "Last name is longer than first");
 
             Console.WriteLine($"Full Name is: {fName} {lName}");
-            Console.WriteLine("Result is: " + myNum);
-            Console.WriteLine("Status is: " + ifPrint);
-            Console.WriteLine("Max name count is: " + Math.Max(fName.Length, lName.Length));
+            Console.WriteLine($"Result is: {myNum}");
+            Console.WriteLine($"Status is: {ifPrint}");
+            Console.WriteLine($"Max name count is: {findMax}");
 
         }
 
