@@ -16,10 +16,9 @@ namespace Practicing
             string lName = Console.ReadLine();
 
             Console.WriteLine("Please enter an integer: ");
-            if (!int.TryParse(Console.ReadLine(), out random))
+            while (!int.TryParse(Console.ReadLine(), out random))
             {
-                Console.WriteLine("Invalid Input!");
-                random = 0;
+                Console.WriteLine("Invalid Input! Try Again: ");
             }
 
             bool ifPrint = random >= 25;
