@@ -28,7 +28,7 @@ namespace Practicing
                 ? "First name is longer than last"
                 : "Last name is longer than first");
 
-            Console.WriteLine($"Full Name is: {fName}");
+            Console.WriteLine($"Full Name is: {fName} {lName}");
             Console.WriteLine($"Result is: {myNum}");
             Console.WriteLine($"Status is: {ifPrint}");
             Console.WriteLine($"Max name count is: {findMax}");
