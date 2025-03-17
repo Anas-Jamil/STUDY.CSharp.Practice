@@ -7,19 +7,13 @@ namespace Practicing
         static void Main(string[] args)
         {
             float myNum = 5.65F;
-            int random;
 
-            Console.WriteLine("Please enter first name: ");
-            string fName = Console.ReadLine();
+            string fName = getName("Please enter first name: ");
 
-            Console.WriteLine("Please enter last name: ");
-            string lName = Console.ReadLine();
+            string lName = getName("Please enter last name: ");
 
-            Console.WriteLine("Please enter an integer: ");
-            while (!int.TryParse(Console.ReadLine(), out random))
-            {
-                Console.WriteLine("Invalid Input! Try Again: ");
-            }
+            int random = inputValid("Please enter an integer: ");
+
 
             bool ifPrint = random >= 25;
             int findMax = Math.Max(fName.Length, lName.Length);
@@ -32,6 +26,27 @@ namespace Practicing
             Console.WriteLine($"Result is: {myNum}");
             Console.WriteLine($"Status is: {ifPrint}");
             Console.WriteLine($"Max name count is: {findMax}");
+
+
+
+            static string getName(string message)
+            {
+                Console.WriteLine(message);
+                return Console.ReadLine();
+
+            }
+
+            static int inputValid(string message)
+            {
+                int number;
+                Console.WriteLine(message);
+                while (!int.TryParse(Console.ReadLine(), out number))
+                {
+                    Console.WriteLine("Invalid Input! Try Again: ");
+                }
+                return number;
+
+            }
 
         }
 
