@@ -8,11 +8,13 @@ namespace Practicing
         {
             float myNum = 5.65F;
 
-            string fName = getName("Please enter first name: ");
+            string fName = getInput("Please enter first name: ");
 
-            string lName = getName("Please enter last name: ");
+            string lName = getInput("Please enter last name: ");
 
             int random = inputValid("Please enter an integer: ");
+
+            string breaker = getInput("Please enter a message to break");
 
 
             bool ifPrint = random >= 25;
@@ -20,9 +22,21 @@ namespace Practicing
 
             nameLengths(fName, lName);
             displayResults(fName, lName, myNum, ifPrint, findMax);
+            breakMessage(breaker);
+            
 
 
-            static string getName(string message)
+            static string breakMessage(string breaker)
+            {
+                Console.WriteLine("Your broken message is: ");
+                for (int i = 0; i < breaker.Length; i++)
+                {
+                    Console.WriteLine(breaker[i]);
+                }
+                return breaker;
+            }
+
+            static string getInput(string message)
             {
                 Console.WriteLine(message);
                 return Console.ReadLine();
