@@ -63,15 +63,25 @@ namespace Practicing
             {
                 int dayOfWeek;
                 Console.WriteLine(message);
-                while (!int.TryParse(Console.ReadLine(), out dayOfWeek))
+                while (true)
                 {
-                    Console.WriteLine("Invalid Input! Try Again: ");
+                    if (int.TryParse(Console.ReadLine(), out dayOfWeek))
+                    {
+                        if (dayOfWeek >= 1 && dayOfWeek <= 7)
+                        {
+                            return dayOfWeek;
+                        } 
+                        else
+                        {
+                            Console.WriteLine("Please enter an input between 1-7: ");
+                        }
+                    } 
+                    else
+                    {
+                        Console.WriteLine("Please enter a valid input(integer): ");
+                    }
                 }
-                while (dayOfWeek > 7 || dayOfWeek < 1)
-                {
-                    Console.WriteLine("Input must be between 1-7");
-                }
-                return dayOfWeek;
+
             }
 
             static void dayOfWeekCase(int dayOfWeek)
