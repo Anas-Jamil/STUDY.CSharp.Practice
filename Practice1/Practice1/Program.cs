@@ -1,4 +1,5 @@
 ﻿using System;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Practicing
 {
@@ -12,9 +13,11 @@ namespace Practicing
 
             string lName = getInput("Please enter last name: ");
 
-            int random = inputValid("Please enter an integer: ");
-
             string breaker = getInput("Please enter a message to break");
+
+            int DOW = dayOfWeekValid("Please enter day of week (1-7, monday-sunday)");
+
+            int random = inputValid("Please enter an integer: ");
 
 
             bool ifPrint = random >= 25;
@@ -23,6 +26,7 @@ namespace Practicing
             nameLengths(fName, lName);
             displayResults(fName, lName, myNum, ifPrint, findMax);
             breakMessage(breaker);
+            dayOfWeekCase(DOW);
             
 
 
@@ -53,6 +57,53 @@ namespace Practicing
                 }
                 return number;
 
+            }
+
+            static int dayOfWeekValid(string message)
+            {
+                int dayOfWeek;
+                Console.WriteLine(message);
+                while (!int.TryParse(Console.ReadLine(), out dayOfWeek))
+                {
+                    Console.WriteLine("Invalid Input! Try Again: ");
+                }
+                while (dayOfWeek > 7 || dayOfWeek < 1)
+                {
+                    Console.WriteLine("Input must be between 1-7");
+                }
+                return dayOfWeek;
+            }
+
+            static void dayOfWeekCase(int dayOfWeek)
+            {
+                Console.WriteLine("Your Chosen day: ");
+                switch(dayOfWeek) 
+                {
+                    case 1:
+                        Console.WriteLine("Monday");
+                        break;
+                    case 2:
+                        Console.WriteLine("Tuesday");
+                        break;
+                    case 3:
+                        Console.WriteLine("Wednesday");
+                        break;
+                    case 4:
+                        Console.WriteLine("Thursday");
+                        break;
+                    case 5:
+                        Console.WriteLine("Friday");
+                        break;
+                    case 6:
+                        Console.WriteLine("Saturday");
+                        break;
+                    case 7:
+                        Console.WriteLine("Sunday");
+                        break;
+                    default: 
+                        Console.WriteLine("Day of Week");
+                        break;
+                }
             }
 
             static void nameLengths(string fName, string lName)
