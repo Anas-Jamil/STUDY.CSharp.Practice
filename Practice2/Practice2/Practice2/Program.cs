@@ -14,22 +14,28 @@ namespace Practicing2
             float num1 = getNumber("Please enter your first numer");
             float num2 = getNumber("Please enter your second numer");
 
+            float result = 0;
+
             if (operation == "+")
             {
-                Additon(num1, num2);
+                result = Additon(num1, num2);
             } else if (operation == "-") 
             {
-                Subtraction(num1, num2);
+                result =  Subtraction(num1, num2);
             } else if (operation == "/") 
-            { 
-                Divide(num1, num2);
+            {
+                result = Divide(num1, num2);
             } else if (operation == "*")
             {
-                Multiplication(num1, num2); 
-            } else
-            {
-                throw new Exception(); 
+                result = Multiplication(num1, num2); 
             }
+            else
+            {
+                Console.WriteLine("Error");
+
+            }
+            Math.Round(result, 2);
+            Console.WriteLine($"Result: {result}");
         }
 
         static float getNumber(string message)
@@ -56,6 +62,7 @@ namespace Practicing2
         
         static float Additon(float num1, float num2) 
         {
+            
             return num1 + num2;
         }
 
