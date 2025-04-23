@@ -13,6 +13,23 @@ namespace Practicing2
 
             float num1 = getNumber("Please enter your first numer");
             float num2 = getNumber("Please enter your second numer");
+
+            if (operation == "+")
+            {
+                Additon(num1, num2);
+            } else if (operation == "-") 
+            {
+                Subtraction(num1, num2);
+            } else if (operation == "/") 
+            { 
+                Divide(num1, num2);
+            } else if (operation == "*")
+            {
+                Multiplication(num1, num2); 
+            } else
+            {
+                throw new Exception(); 
+            }
         }
 
         static float getNumber(string message)
@@ -32,6 +49,7 @@ namespace Practicing2
             while(operation != "+" && operation != "-" && operation != "/" && operation != "*") 
             {
                 Console.WriteLine("Invalid operation, please enter one of (+,-,/,*)");
+                operation = Console.ReadLine();
             }
             return operation;
         }
@@ -41,7 +59,20 @@ namespace Practicing2
             return num1 + num2;
         }
 
-        static float Subtraction
+        static float Subtraction(float num1, float num2)
+        {
+            return num1 - num2;
+        }
+
+        static float Multiplication(float num1, float num2)
+        {
+            return num1 * num2; 
+        }
+
+        static float Divide(float num1, float num2)
+        {
+            return num1 / num2;
+        }
         
     }
 }
