@@ -1,13 +1,14 @@
 ﻿using System;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-// A very simple in console calculator that also has test cases
 
-namespace Practicing2
+// A very simple in console calculator
+
+namespace Practice2
 {
-    class Program
+    public class Calculator
     {
-        static void Main(string[] args)
+       public static void Main(string[] args)
         {
             string operation = getOperation("What operation would you like to use? (+,-,/,*): ");
 
@@ -38,7 +39,7 @@ namespace Practicing2
             Console.WriteLine($"Result: {result}");
         }
 
-        static float getNumber(string message)
+        public static float getNumber(string message)
         {
             float number; 
             Console.WriteLine(message);
@@ -48,7 +49,7 @@ namespace Practicing2
             }
             return number;
         }
-        static string getOperation(string message)
+        public static string getOperation(string message)
         {
             Console.WriteLine(message);
             string operation = Console.ReadLine();
@@ -59,24 +60,24 @@ namespace Practicing2
             }
             return operation;
         }
-        
-        static float Additon(float num1, float num2) 
+
+        public static float Additon(float num1, float num2) 
         {
             
             return num1 + num2;
         }
 
-        static float Subtraction(float num1, float num2)
+        public static float Subtraction(float num1, float num2)
         {
             return num1 - num2;
         }
 
-        static float Multiplication(float num1, float num2)
+        public static float Multiplication(float num1, float num2)
         {
             return num1 * num2; 
         }
 
-        static float Divide(float num1, float num2)
+        public static float Divide(float num1, float num2)
         {
             return num1 / num2;
         }
